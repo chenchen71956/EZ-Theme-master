@@ -226,7 +226,7 @@
 
             <div 
 
-              v-for="message in ticketMessages" 
+              v-for="(message, index) in ticketMessages" 
 
               :key="message.id"
 
@@ -262,7 +262,7 @@
 
                 </div>
 
-                <div class="message-text">{{ message.message }}</div>
+                <div class="message-text">{{ getDisplayMessage(message.message, index, message.is_admin) }}</div>
 
               </div>
 
@@ -564,7 +564,7 @@ import { fetchTicketList, createTicket, getTicketDetail, replyTicket, closeTicke
 
 import { getUserInfo, getIpLocationInfo, getCommConfig, getUserSubscribe } from '@/api/user';
 
-import { formatUserInfoForTicket } from '@/utils/formatters';
+import { formatUserInfoForTicket, stripTicketUserInfoBlock } from '@/utils/formatters';
 
 import { TICKET_CONFIG } from '@/utils/baseConfig';
 
@@ -683,6 +683,13 @@ const getPriorityLabel = (level) => {
 
   return labels[level] || labels[0];
 
+};
+
+const getDisplayMessage = (text, index, isAdmin) => {
+  if (!isAdmin && index === 0) {
+    return stripTicketUserInfoBlock(text);
+  }
+  return text;
 };
 
 

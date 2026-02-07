@@ -322,7 +322,7 @@
 
                       </div>
 
-                      <div class="message-text">{{ message.message }}</div>
+                      <div class="message-text">{{ getDisplayMessage(message.message, index, message.is_admin) }}</div>
 
                     </div>
 
@@ -540,7 +540,7 @@ import {
 } from '@tabler/icons-vue';
 import { fetchTicketList, createTicket, getTicketDetail, replyTicket, closeTicket } from '@/api/ticket';
 import { getUserInfo, getIpLocationInfo, getCommConfig, getUserSubscribe } from '@/api/user';
-import { formatUserInfoForTicket } from '@/utils/formatters';
+import { formatUserInfoForTicket, stripTicketUserInfoBlock } from '@/utils/formatters';
 import LoadingSpinner from '@/components/common/LoadingSpinner.vue';
 import { useToast } from '@/composables/useToast';
 import TicketPopup from '@/components/ticket/TicketPopup.vue';
@@ -580,6 +580,13 @@ const filteredTickets = computed(() => {
     ticket.subject.toLowerCase().includes(query)
   );
 });
+
+const getDisplayMessage = (text, index, isAdmin) => {
+  if (!isAdmin && index === 0) {
+    return stripTicketUserInfoBlock(text);
+  }
+  return text;
+};
 
 const fetchTickets = async () => {
   loadingTickets.value = true;
