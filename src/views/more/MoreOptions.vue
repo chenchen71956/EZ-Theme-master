@@ -629,6 +629,98 @@ onUnmounted(() => {
 
   }
 
+  .gift-card-history-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+  }
+
+  .gift-card-history-item {
+
+    display: grid;
+
+    grid-template-columns: 1fr auto;
+
+    gap: 16px;
+
+    align-items: center;
+
+    padding: 14px 0;
+
+    border-top: 1px solid var(--border-color);
+
+    &:first-child {
+
+      border-top: none;
+
+      padding-top: 0;
+
+    }
+
+    &:last-child {
+
+      padding-bottom: 0;
+
+    }
+
+    .history-main {
+
+      min-width: 0;
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 6px;
+
+    }
+
+    .history-title {
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      color: var(--text-color);
+
+      line-height: 1.2;
+
+      word-break: break-word;
+
+    }
+
+    .history-code {
+
+      font-size: 12px;
+
+      color: var(--secondary-text-color);
+
+      letter-spacing: 0.2px;
+
+    }
+
+    .history-meta {
+
+      display: flex;
+
+      justify-content: flex-end;
+
+    }
+
+    .history-time {
+
+      font-size: 12px;
+
+      color: var(--secondary-text-color);
+
+      white-space: nowrap;
+
+    }
+
+  }
+
   
 
   .stats-grid {
