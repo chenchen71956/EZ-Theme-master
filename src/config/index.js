@@ -26,8 +26,14 @@ export const config  = {
         // 支持字符串形式(单个API地址)或数组形式(多个备选API地址)
         // 多个地址时，会按顺序检测可用性，并使用第一个可用的地址
         staticBaseUrl: [
-            'https://apifu.992982.xyz/api/v1',
-            'https://apifu.992982.xyz/api/v2'
+            'https://www.apibeyond.top/api/v1',
+            'https://www.apibeyond.top/api/v2',
+            'https://www.api1beyond.top/api/v2',
+            'https://www.api2beyond.top/api/v2',
+            'https://www.api3beyond.top/api/v2',
+            'https://www.api1beyond.top/api/v1',
+            'https://www.api2beyond.top/api/v1',
+            'https://www.api3beyond.top/api/v1'
         ],
 
         // 自动获取模式配置 (urlMode = 'auto'时使用)
@@ -39,7 +45,7 @@ export const config  = {
             appendApiPath: true,
 
             // API路径
-            apiPath: '/api/v2'
+            apiPath: '/beyond/v6'
         }
     },
 
@@ -57,24 +63,24 @@ export const config  = {
 
     // ====================  网站基础配置  ====================
     SITE_CONFIG: {
-        siteName: '黑心云|府',
-        siteDescription: '黑心云|府',
+        siteName: '彼岸云',
+        siteDescription: '彼岸云',
         // copyright会自动使用当前年份
-        copyright: `© ${new Date().getFullYear()} 黑心云|府. All Rights Reserved.`,
+        copyright: `© ${new Date().getFullYear()} 彼岸云. All Rights Reserved.`,
 
         // 是否显示标题中的网站Logo (true=显示, false=隐藏)
         showLogo: true,
 
         // Landing页面多语言标语
         landingText: {
-            'zh-CN': '世界那么大，我想云游一下',
-            'vi-VN': 'Thế giới thật rộng lớn, tôi muốn du ngoạn trên mây',
-            'en-US': 'The world is vast, I want to roam the cloud',
-            'zh-TW': '世界那麼大，我想雲遊一下',
-            'ja-JP': '世界はとても広い、クラウドを旅したい',
-            'ko-KR': '세상은 이렇게 넓다, 클라우드를 유람하고 싶다',
-            'ru-RU': 'Мир так велик, хочу странствовать по облакам',
-            'fa-IR': 'دنیا بسیار بزرگ است، می‌خواهم در ابرها گردش کنم'
+            'zh-CN': '稳定、安全是我们的唯一宗旨',
+            'vi-VN': 'Ổn định và an toàn là tôn chỉ duy nhất của chúng tôi',
+            'en-US': 'Stability and security are our sole mission',
+            'zh-TW': '穩定、安全是我們的唯一宗旨',
+            'ja-JP': '安定と安全が私たちの唯一の目的です',
+            'ko-KR': '안정과 보안은 우리의 유일한 취지입니다',
+            'ru-RU': 'Стабильность и безопасность — наша единственная цель',
+            'fa-IR': 'ثبات و امنیت تنها هدف ماست'
         },
 
         // 自定义landing页面路径（相对于public目录
@@ -115,19 +121,19 @@ export const config  = {
         // 认证页面弹窗公告配置
         popup: {
             // 是否启用弹窗
-            enabled: false,
+            enabled: true,
 
             // 弹窗标题
-            title: "用户须知 (可自定义开启)",
+            title: "欢迎来到彼岸云",
 
             // 弹窗内容 (支持HTML)
-            content: "<p><strong>欢迎使用我们的服务！</strong></p><p>请注意以下事项：</p><ul><li>请妥善保管您的账号信息</li><li>如有问题请联系客服</li></ul>",
+            content: "一年沉淀，只为做最好的云",
 
             // 冷却时间（小时），在此时间内不会再次显示弹窗
             cooldownHours: 0,
 
             // 等待时间（秒），用户需要等待多少秒才能关闭弹窗，设为0表示无需等待
-            closeWaitSeconds: 3
+            closeWaitSeconds: 1
         }
     },
 
@@ -165,7 +171,7 @@ export const config  = {
     // 商店页面配置
     SHOP_CONFIG: {
         // 是否在商店导航上显示热销标记
-        showHotSaleBadge: false,
+        showHotSaleBadge: true,
 
         // 是否显示套餐特性卡片 (true=显示, false=隐藏)
         showPlanFeatureCards: true, // 默认显示
@@ -231,7 +237,7 @@ export const config  = {
         showUserEmail: false,
 
         // 是否为导入订阅按钮添加高光效果和填充底色 (true=添加效果, false=不添加效果)
-        importButtonHighlightBtnbgcolor: false,
+        importButtonHighlightBtnbgcolor: true,
 
         // ===============================
 
@@ -264,7 +270,7 @@ export const config  = {
         showImportSubscription: true,
 
         // 群聊链接地址（用于仪表盘“群聊吹水”按钮）
-        groupChatUrl: 'https://t.me/heixinyun_chat',
+        groupChatUrl: 'https://t.me/beyondcloudhome',
     },
 
     // 客户端下载配置
